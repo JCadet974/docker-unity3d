@@ -63,12 +63,14 @@ RUN useradd -u 12345 -g users -d /home/adminuser -s /bin/bash -p $(echo 1234 | o
 
 # updated list of versions https://forum.unity.com/threads/unity-on-linux-release-notes-and-known-issues.350256/page-2
 # version used in this container: http://beta.unity3d.com/download/8bc04e1c171e/unity-editor_amd64-5.6.0xf3Linux.deb
+# Unity-Hub : https://public-cdn.cloud.unity3d.com/hub/prod/UnityHub.AppImage?button=onboarding-download-btn-linux&_ga=2.173720483.14251061.1616960601-1327513681.1616960601
 # 2017.2 (latest): http://beta.unity3d.com/download/ee86734cf592/unity-editor_amd64-2017.2.0f3.deb
 # N.B. in 2017.2 you can use --username [your username] --password [pass] --serial to activate seamlessly without
 # having to vnc to container
 RUN mkdir -p /home/adminuser/.cache/unity3d && mkdir -p /home/adminuser/.local/share/unity3d/Unity && \
   mkdir -p /home/adminuser/.local/share/unity3d/Certificates && \
-  curl -O http://beta.unity3d.com/download/8bc04e1c171e/unity-editor_amd64-5.6.0xf3Linux.deb && \
+  curl -O https://public-cdn.cloud.unity3d.com/hub/prod/UnityHub.AppImage?button=onboarding-download-btn-linux&_ga=2.173720483.14251061.1616960601-1327513681.1616960601
+ && \
   dpkg -i /unity-editor_amd64-5.6.0xf3Linux.deb && \
   rm -f /unity-editor_amd64-5.6.0xf3Linux.deb
 
