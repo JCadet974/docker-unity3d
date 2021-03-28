@@ -57,6 +57,7 @@ RUN sed 's/main$/main universe/' -i /etc/apt/sources.list && \
   x11vnc \
   xvfb \
   sudo \
+  dpkg \
   && rm -rf /var/lib/apt/lists/*
 
 RUN useradd -u 12345 -g users -d /home/adminuser -s /bin/bash -p $(echo 1234 | openssl passwd -1 -stdin) adminuser
