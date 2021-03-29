@@ -71,8 +71,7 @@ RUN useradd -u 12345 -g users -d /home/adminuser -s /bin/bash -p $(echo 1234 | o
 # having to vnc to container
 RUN mkdir -p /home/adminuser/.cache/unity3d && mkdir -p /home/adminuser/.local/share/unity3d/Unity && \
   mkdir -p /home/adminuser/.local/share/unity3d/Certificates && \
-  curl -O https://public-cdn.cloud.unity3d.com/hub/prod/UnityHub.AppImage?button=onboarding-download-btn-linux&_ga=2.173720483.14251061.1616960601-1327513681.1616960601
- && \
+  curl -O https://public-cdn.cloud.unity3d.com/hub/prod/UnityHub.AppImage?button=onboarding-download-btn-linux&_ga=2.173720483.14251061.1616960601-1327513681.1616960601 && \
   chmod a+x 'UnityHub.AppImage?button=onboarding-download-btn-linux' && \
 # JC  dpkg -i 'UnityHub.AppImage?button=onboarding-download-btn-linux' && \
   ./'UnityHub.AppImage?button=onboarding-download-btn-linux' --appimage-extract  && \
