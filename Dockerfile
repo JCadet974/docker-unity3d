@@ -2,7 +2,9 @@ FROM ubuntu:focal
 MAINTAINER me@cadet.run
 
 #RUN sed 's/main$/main universe/' -i /etc/apt/sources.list 
-RUN  apt-get update 
+#RUN  apt-get update
+RUN apt-get update && apt-get install -y apt-transport-https
+
 RUN  apt-get install -y \
   git \
   imagemagick \
