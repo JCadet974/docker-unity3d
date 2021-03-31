@@ -61,8 +61,9 @@ RUN  apt-get install -y \
   x11vnc \
   xvfb \
   sudo \
-  fuse \
-  && rm -rf /var/lib/apt/lists/*
+  fuse 
+  
+RUN rm -rf /var/lib/apt/lists/*
 
 RUN useradd -u 12345 -g users -d /home/adminuser -s /bin/bash -p $(echo 1234 | openssl passwd -1 -stdin) adminuser
 
